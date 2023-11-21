@@ -30,8 +30,14 @@ router  - npm i react-router-dom
 3.
 context -
 
+create seperate file for context
 import createcontext 
 make instance and export 
 build reducer and initital state= {name, id, email, imageUrl}
 write HOC, use usereducer and export 
 add HOC into index.js over app 
+
+4. 
+Register : 
+
+create html section along with state 

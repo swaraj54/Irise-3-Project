@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../Context/AuthContext";
 
@@ -6,7 +6,7 @@ import { MyContext } from "../Context/AuthContext";
 function Login() {
 
     const { state, Login } = useContext(MyContext);
-
+    // console.log(state,"state")
     const router = useNavigate();
     const [userData, setUserData] = useState({ email: "", password: "" })
     // console.log(userData, "userData")
@@ -30,7 +30,8 @@ function Login() {
 
             for (var i = 0; i < LS.length; i++) {
                 if (LS[i].email === userData.email && LS[i].password === userData.password) {
-
+                    // abc@gmail.com -> jwt -> ctrybuinmbugvyfctdrxsdctvbghn67
+                    localStorage.setItem("Logged_In_User", JSON.stringify({ email: LS[i].email }))
                     Login({ name: LS[i].name, email: LS[i].email });
                     setUserData({ email: "", password: "" })
                     router("/")
@@ -45,6 +46,14 @@ function Login() {
             alert("Please fill the all values.")
         }
     }
+
+
+    useEffect(() => {
+        if (state?.user?.name) {
+            router('/')
+        }
+    }, [state])
+
     return (
         <div>
             <h1>Login</h1>

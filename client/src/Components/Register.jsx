@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MyContext } from "../Context/AuthContext";
 
 function Register() {
+
+    const { state } = useContext(MyContext)
+
     const router = useNavigate();
     const [userData, setUserData] = useState({ name: "", email: "", password: "" })
     console.log(userData, "userData")
@@ -37,6 +41,14 @@ function Register() {
             alert("Please fill the all values.")
         }
     }
+
+
+    useEffect(() => {
+        if (state?.user?.name) {
+            router("/")
+        }
+    }, [state])
+
     return (
         <div>
             <h1>Register</h1>

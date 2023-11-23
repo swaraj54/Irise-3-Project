@@ -1,0 +1,54 @@
+#nav-div {
+    border: 2px solid black;
+    display: flex;
+    height: 40px;
+    background-color: rgb(166, 165, 165);
+    color: white;
+    justify-content: space-around;
+    font-size: 24px;
+}
+
+#nav-div>div {
+    width: 40%;
+}
+
+#nav-div>div:nth-child(1) {
+    width: 10%;
+    cursor: pointer;
+}
+
+
+#nav-div>div:nth-child(2)>div {
+    cursor: pointer;
+}
+
+
+.d-f {
+    display: flex;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-r {
+    justify-content: right;
+}
+
+.c-p {
+    cursor: pointer;
+}
+
+
+#nav-div>div:nth-child(3)>div:nth-child(2) {
+    width: 20%;
+}
+
+#nav-div>div:nth-child(3)>div:nth-child(1) {
+    width: 30%;
+    justify-content: space-between;
+}
+
+.profile {
+    display: flex;
+}

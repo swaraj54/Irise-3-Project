@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from 'react'
+import toast from 'react-hot-toast';
 
 export const MyContext = createContext();
 
@@ -25,6 +26,7 @@ const AuthContext = ({ children }) => {
     const Logout = () => {
         localStorage.removeItem("Logged_In_User")
         dispatch({ type: 'LOGOUT' })
+        toast.success("Logout Successfull.")
     }
 
     useEffect(() => {

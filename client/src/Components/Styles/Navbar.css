@@ -3,7 +3,7 @@
     display: flex;
     height: 40px;
     background-color: rgb(166, 165, 165);
-    color: white;
+    /* color: white; */
     justify-content: space-around;
     font-size: 24px;
 }

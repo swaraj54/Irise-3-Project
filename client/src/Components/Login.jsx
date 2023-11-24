@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 
 function Login() {
@@ -35,15 +36,15 @@ function Login() {
                     Login({ name: LS[i].name, email: LS[i].email });
                     setUserData({ email: "", password: "" })
                     router("/")
-                    return alert("Login Successfull.")
+                    return toast.success("Login Successfull.")
                 }
             }
 
-            return alert("Please check you creds.")
+            return toast.error("Please check you creds.")
 
 
         } else {
-            alert("Please fill the all values.")
+            toast.error("Please fill the all values.")
         }
     }
 

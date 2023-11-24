@@ -20,7 +20,7 @@ function Navbar() {
             <div className='d-f jc-r' >
                 {state?.user?.name ? <div className='profile'>
                     <div className='c-p'>Profile </div>
-                    <div className='c-p'>Logout</div>
+                    <div onClick={Logout} className='c-p'>Logout</div>
                 </div> : <div className='c-p' onClick={() => router('/login')}>Login</div>}
                 <div className='c-p'>Cart</div>
             </div>

@@ -6,6 +6,8 @@ import Login from './Components/Login';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import Mens from './Components/Mens';
+import SingleProduct from './Components/SingleProduct';
+import Cart from './Components/Cart';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/mens' element={<Mens />} />
+        <Route path='/single-product/:id' element={<SingleProduct />} />
+        <Route path='/cart' element={<Cart />} />
         {/* <Route /> */}
       </Routes>
       <Footer />
